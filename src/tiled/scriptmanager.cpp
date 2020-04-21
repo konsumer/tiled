@@ -42,6 +42,7 @@
 #include "scriptfile.h"
 #include "scriptfileformatwrappers.h"
 #include "scriptmodule.h"
+#include "scriptprocess.h"
 #include "tilecollisiondock.h"
 #include "tilelayer.h"
 #include "tilelayeredit.h"
@@ -282,6 +283,7 @@ void ScriptManager::setupEngine()
     QJSValue globalObject = mEngine->globalObject();
     globalObject.setProperty(QStringLiteral("tiled"), mEngine->newQObject(mModule));
 #if QT_VERSION >= 0x050800
+    globalObject.setProperty(QStringLiteral("Process"), mEngine->newQMetaObject<ScriptProcess>());
     globalObject.setProperty(QStringLiteral("TextFile"), mEngine->newQMetaObject<ScriptTextFile>());
     globalObject.setProperty(QStringLiteral("BinaryFile"), mEngine->newQMetaObject<ScriptBinaryFile>());
     globalObject.setProperty(QStringLiteral("Layer"), mEngine->newQMetaObject<EditableLayer>());

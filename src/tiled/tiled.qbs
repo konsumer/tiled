@@ -431,6 +431,8 @@ QtGuiApplication {
         "scriptmanager.h",
         "scriptmodule.cpp",
         "scriptmodule.h",
+        "scriptprocess.cpp",
+        "scriptprocess.h",
         "selectionrectangle.cpp",
         "selectionrectangle.h",
         "selectsametiletool.cpp",
